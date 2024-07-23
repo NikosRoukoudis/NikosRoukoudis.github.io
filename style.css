@@ -113,8 +113,6 @@ body {
 .about .about-image img {
     height: auto;
     width: 60%;
-    max-width: 400px;
-    border-radius: 10px;
 }
 
 /* Portfolio section styles */
