@@ -63,7 +63,7 @@ body {
 
 /* Main Hero Section Styles */
 .hero {
-    background-image: url(computer-science.jpg);
+    background-image: url(computer-science.webp);
     background-repeat: no-repeat;
     background-size: cover;
     width: 100%;
