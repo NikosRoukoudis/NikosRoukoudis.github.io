@@ -165,7 +165,7 @@ body {
 .my-card {
     text-align: center;
     display: flex;
-    flex-direction: column;
+    flex-direction: center;
     align-items: center;
     justify-content: center;
     border-radius: 20px;
