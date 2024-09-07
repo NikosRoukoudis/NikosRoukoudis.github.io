@@ -164,7 +164,7 @@ body {
 
 .my-card {
     text-align: center;
-    display: flex;
+    display: center;
     flex-direction: center;
     align-items: center;
     justify-content: center;
