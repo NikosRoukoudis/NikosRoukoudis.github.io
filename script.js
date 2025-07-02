@@ -15,3 +15,22 @@ hamburger.addEventListener('click', function () {
         menu.style.display = "block"
     } 
 });
+
+const form = document.getElementById('contact-form');
+const loader = document.getElementById('loader');
+
+form.addEventListener('submit', function (event) {
+    event.preventDefault(); // αποτρέπουμε την κανονική υποβολή
+
+    // Εμφανίζουμε τον loader
+    loader.style.display = 'block';
+
+    // Προσομοίωση καθυστέρησης αποστολής (π.χ. AJAX request ή email API)
+    setTimeout(() => {
+        loader.style.display = 'none';
+        alert("Your message has been sent!");
+
+        // Καθαρίζουμε τη φόρμα (προαιρετικό)
+        form.reset();
+    }, 2000); // 2 δευτερόλεπτα καθυστέρηση
+});
