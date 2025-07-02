@@ -162,19 +162,20 @@
         <div class="contact-content">
             <div class="contact-form-container">
                 <h1 class="greet-heading">Get In Touch</h1>
-                <form class="contact-form">
+                <form id="contact-form" class="contact-form">
                     <label for="name">Your Name</label>
-                    <input class="form-controls" type="text" id="name" placeholder="Your Name">
+                    <input class="form-controls" type="text" id="name" name="from_name" placeholder="Your Name" required>
 
                     <label for="email">Your Email</label>
-                    <input class="form-controls" type="email" id="email" placeholder="Your Email">
+                    <input class="form-controls" type="email" id="email" name="reply_to" placeholder="Your Email" required>
 
                     <label for="phone">Your Phone</label>
-                    <input class="form-controls" type="tel" id="phone" placeholder="Your Phone">
+                    <input class="form-controls" type="tel" id="phone" name="phone" placeholder="Your Phone">
 
                     <label for="message">Write your message</label>
-                    <textarea class="form-controls" id="message" placeholder="Write your message" cols="30"
-                        rows="10"></textarea>
+                    <textarea class="form-controls" id="message" name="message" placeholder="Write your message" cols="30" rows="10"
+                        required></textarea>
+
                     <input class="form-btn btn common-btn" type="submit" value="Send Message">
                     <div id="loader" class="loader" style="display: none;"></div>
                 </form>
@@ -241,3 +242,10 @@
 </body>
 
 </html>
+
+<script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+<script type="text/javascript">
+  (function () {
+    emailjs.init("BJUgrAqTb-YCrweBu");
+  })();
+</script>

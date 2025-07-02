@@ -19,18 +19,23 @@ hamburger.addEventListener('click', function () {
 const form = document.getElementById('contact-form');
 const loader = document.getElementById('loader');
 
-form.addEventListener('submit', function (event) {
-    event.preventDefault(); // αποτρέπουμε την κανονική υποβολή
+form.addEventListener('submit', function (e) {
+    e.preventDefault(); // ➤ μπλοκάρει την προεπιλεγμένη συμπεριφορά (υποβολή HTML)
 
-    // Εμφανίζουμε τον loader
+    // ➤ εμφάνιση του loader
     loader.style.display = 'block';
 
-    // Προσομοίωση καθυστέρησης αποστολής (π.χ. AJAX request ή email API)
-    setTimeout(() => {
-        loader.style.display = 'none';
-        alert("Your message has been sent!");
-
-        // Καθαρίζουμε τη φόρμα (προαιρετικό)
-        form.reset();
-    }, 2000); // 2 δευτερόλεπτα καθυστέρηση
+    // ➤ αποστολή του email μέσω EmailJS
+    emailjs.sendForm('service_mygmail', 'template_contactyou', this)
+        .then(function () {
+            // Απόκρυψη loader και εμφάνιση μηνύματος επιτυχίας
+            loader.style.display = 'none';
+            alert('✅ Το μήνυμα στάλθηκε επιτυχώς!');
+            form.reset(); // καθάρισε τη φόρμα
+        }, function (error) {
+            // Απόκρυψη loader και εμφάνιση μηνύματος αποτυχίας
+            loader.style.display = 'none';
+            alert('❌ Αποτυχία αποστολής. Προσπάθησε ξανά αργότερα.');
+            console.error('EmailJS Error:', error);
+        });
 });
