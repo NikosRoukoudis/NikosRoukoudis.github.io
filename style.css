@@ -378,16 +378,32 @@ body {
         flex-direction: column;
     }
 
-    .about {
-        flex-direction: column;
-    }
+.about {
+    display: flex;
+    align-items: center;
+    background-image: linear-gradient(45deg, #363D73, #2794B3);
+    justify-content: space-between;
+    width: 100%;
+    flex-wrap: wrap;
+}
 
-    .about .about-text,
-    .about .about-image {
-        width: 100%;
-        padding: 1rem;
-        text-align: center;
-    }
+.about .about-text {
+    width: 48%;
+    color: #fff;
+    padding: 2rem 1rem;
+    text-align: left;
+}
+
+.about .about-image {
+    width: 48%;
+    text-align: center;
+    padding: 2rem 1rem;
+}
+
+.about .about-image img {
+    height: auto;
+    width: 60%;
+}
 
     .portfolio {
         padding: 0 1rem;
