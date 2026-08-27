@@ -109,11 +109,17 @@ body {
     width: 45%;
     text-align: center;
     padding: 2rem 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
 }
 
 .about .about-image img {
-    height: auto;
+    height: 100%;
     width: min(60%, 320px);
+    object-fit: cover;
+    display: block;
 }
 
 /* Portfolio section styles */
